@@ -2,6 +2,8 @@ import { TituloFormulario } from '../TituloFormulario'
 import { CampoDeFormulario } from '../CampoDeFormulario'
 import { Label } from '../Label'
 import { CampoDeEntrada } from '../CampoDeEntrada'
+import { Botao } from '../Botao'
+import { ListaSuspensa } from '../ListaSuspensa'
 import './formulario-de-eventos.estilos.css'
 
 export function FormularioDeEvento() {
@@ -37,6 +39,17 @@ export function FormularioDeEvento() {
           >
           </CampoDeEntrada>
         </CampoDeFormulario>
+        
+        <CampoDeFormulario>
+          <Label htmlFor="temaEvento">
+            Tema do Evento
+          </Label>
+          <ListaSuspensa>
+          </ListaSuspensa>
+        </CampoDeFormulario>
+      </div>
+      <div className='acoes'>
+        <Botao>Criar Evento</Botao>
       </div>
     </form>
   )
