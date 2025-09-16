@@ -16,3 +16,12 @@ section {
     max-width: 90%;
   }
 }
+
+.form-evento{
+  background-color: #212121;
+  border-radius: 16px;
+  padding: 32px 28px;
+  width: 384px;
+  max-width: 90%;
+  margin: 64px auto;
+}
