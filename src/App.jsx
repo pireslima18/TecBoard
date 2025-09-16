@@ -1,18 +1,5 @@
 import './App.css'
-
-function FormularioDeEvento() {
-  return (
-    <form className='form-evento'>
-      <h2>Preencha para criar um evento</h2>
-      <fieldset>
-        <label htmlFor="">
-          Qual é o nome do evento?
-        </label>
-        <input type="text" id="nome"/>
-      </fieldset>
-    </form>
-  )
-}
+import {FormularioDeEvento} from './componentes/FormularioDeEvento'
 
 function App() {
 
