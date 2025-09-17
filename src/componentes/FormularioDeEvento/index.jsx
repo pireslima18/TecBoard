@@ -12,7 +12,9 @@ export function FormularioDeEvento({temas, aoSubmeter}) {
 
     const evento = {
       capa: formData.get('capa'),
-      tema: formData.get('tema'),
+      tema: temas.find(function (item) {
+        return item.id == formData.get('tema')
+      }),
       data: new Date(formData.get('dataEvento')),
       titulo: formData.get('nomeEvento'),
     }
