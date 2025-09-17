@@ -3,6 +3,7 @@ import {FormularioDeEvento} from './componentes/FormularioDeEvento'
 import {Banner} from './componentes/Banner'
 import {Tema} from './componentes/Tema'
 import {CardEvento} from './componentes/CardEvento'
+import { useState } from 'react'
 
 function App() {
 
@@ -33,14 +34,19 @@ function App() {
     }
   ]
 
-  const eventos = [
+  const [eventos, setEventos] = useState([
     {
       capa: "./eventos/Imagem1.png",
       tema: temas[0],
       data: new Date(),
       titulo: "Mulheres no Front",
     }
-  ]
+  ])
+
+  function adicionarEvento (evento) {
+    eventos.push(evento)
+    setEventos([...eventos, evento])
+  }
 
   return (
     <main>
@@ -50,13 +56,20 @@ function App() {
       <section className="banner">
         <Banner src="/banner.png"/>
       </section>
-      <FormularioDeEvento/>
+      <FormularioDeEvento 
+        temas={temas} 
+        aoSubmeter={adicionarEvento} 
+      />
 
       {temas.map( function(item) {
         return (
           <section key={item.id}>
             <Tema tema={item}/>
-            <CardEvento evento={eventos[0]}/>
+            {
+              eventos.map(function (item, index) {
+                return <CardEvento evento={item} key={index} />
+              })
+            }
           </section>
         )
       })}
